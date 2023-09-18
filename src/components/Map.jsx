@@ -1,4 +1,4 @@
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   MapContainer,
   Marker,
@@ -84,7 +84,6 @@ function DetectClick() {
   const navigate = useNavigate();
   useMapEvents({
     click: (e) => {
-      console.log(e.latlng.lat, e.latlng.lng);
       navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`);
     },
   });
