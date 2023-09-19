@@ -37,7 +37,6 @@ function reducer(state, action) {
         cities: [...state.cities, action.payload],
         currentCity: action.payload,
       };
-
     case "city/deleted":
       return {
         ...state,
@@ -45,14 +44,12 @@ function reducer(state, action) {
         cities: state.cities.filter((city) => city.id !== action.payload),
         currentCity: {},
       };
-
     case "rejected":
       return {
         ...state,
         isLoading: false,
         error: action.payload,
       };
-
     default:
       throw new Error("Unknown action type");
   }
